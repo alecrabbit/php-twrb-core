@@ -365,7 +365,7 @@ class DataOHLCV
                 $count = \count($this->timestamps[$resolution] ?? []) + 1;
                 $result[] =
                     sprintf(
-                        '%s|%s [%s] %s %s %s %s %s %s %s',
+                        '%s|%s [%s] %s %s %.6f %.6f %.6f %.6f %.8f',
                         date('H:i:s', $this->current[$resolution][TIMESTAMP]),
                         $this->current[$resolution][TIMESTAMP],
                         RESOLUTION_ALIASES[$resolution],

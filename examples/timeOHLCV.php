@@ -9,7 +9,7 @@ require_once __DIR__ . '/../examples/__include/bootstrap.php';
 require_once __DIR__ . '/../examples/__include/DefaultObserver.php';
 
 
-$symbol = 'BTCUSDt';
+$symbol = 'LTCBTC';
 $ohlcv = new DataOHLCV($symbol);
 
 $url =
@@ -40,7 +40,7 @@ $messagesObserver = new DefaultObserver(
             $trade = new Trade((int)$decoded->m, $symbol, (float)$decoded->p, (float)$decoded->q, $tradeTime);
             $ohlcv->addTrade($trade);
             $stop = hrtime(true);
-            unset($trade);
+            // unset($trade);
             echo $str . ' ' . sprintf('%.1fμs', ($stop - $start) / 1000) . PHP_EOL;
         }
     }
