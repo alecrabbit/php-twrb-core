@@ -195,8 +195,11 @@ class DataOHLCV
     private function nextResolution(int $resolution): ?int
     {
         $key = array_search($resolution, RESOLUTIONS, true);
-        if ($key !== false && array_key_exists(++$key, RESOLUTIONS)) {
-            return RESOLUTIONS[$key];
+        if ($key !== false) {
+            $key = (int)$key; // For psalm
+            if (array_key_exists(++$key, RESOLUTIONS)) {
+                return RESOLUTIONS[$key];
+            }
         }
         return null;
     }
@@ -229,10 +232,10 @@ class DataOHLCV
     {
         if ($useCoefficient && $this->coefficient !== 1) {
             $values = array_map(
-                /**
-                * @param float|int $v
-                * @return float|int
-                */
+            /**
+             * @param float|int $v
+             * @return float|int
+             */
                 function ($v) {
                     return
                         $v * $this->coefficient;
