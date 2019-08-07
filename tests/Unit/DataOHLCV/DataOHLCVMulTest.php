@@ -1,12 +1,8 @@
 <?php
-/**
- * Date: 31.10.18
- * Time: 16:33
- */
 
-namespace Unit;
+namespace AlecRabbit\Tests\TWRBCore;
 
-use AlecRabbit\DataOHLCV;
+use AlecRabbit\TWRBCore\DataOHLCV;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 
@@ -71,6 +67,4 @@ class DataOHLCVMulTest extends TestCase
             [[1, 2, 3], [1, 2, 3], false, 2],
         ];
     }
-
-
 }

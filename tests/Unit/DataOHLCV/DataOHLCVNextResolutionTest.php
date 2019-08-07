@@ -1,15 +1,21 @@
 <?php
-/**
- * Date: 31.10.18
- * Time: 16:33
- */
 
-namespace Unit;
+namespace AlecRabbit\Tests\TWRBCore;
 
-
-use AlecRabbit\DataOHLCV;
+use AlecRabbit\TWRBCore\DataOHLCV;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01DAY;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_02HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_04HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_05MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_15MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_30MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_45MIN;
 
 class DataOHLCVNextResolutionTest extends TestCase
 {
@@ -48,6 +54,4 @@ class DataOHLCVNextResolutionTest extends TestCase
             [false, RESOLUTION_01DAY],
         ];
     }
-
-
 }

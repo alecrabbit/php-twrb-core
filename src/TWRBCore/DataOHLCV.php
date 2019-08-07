@@ -229,13 +229,14 @@ class DataOHLCV
     {
         if ($useCoefficient && $this->coefficient !== 1) {
             $values = array_map(
-            /**
-             * @param float|int $v
-             * @return float|int
-             */ function ($v) {
-                return
-                    $v * $this->coefficient;
-            },
+                /**
+                * @param float|int $v
+                * @return float|int
+                */
+                function ($v) {
+                    return
+                        $v * $this->coefficient;
+                },
                 $values
             );
         }

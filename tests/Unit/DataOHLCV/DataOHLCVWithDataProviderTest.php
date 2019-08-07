@@ -1,12 +1,25 @@
 <?php
 
-namespace Unit;
+namespace AlecRabbit\Tests\TWRBCore;
 
 use AlecRabbit\Accessories\Circular;
-use AlecRabbit\DataOHLCV;
 use AlecRabbit\Accessories\Rewindable;
+use AlecRabbit\Tests\Aux\CommonTrades;
+use AlecRabbit\TWRBCore\DataOHLCV;
 use PHPUnit\Framework\TestCase;
-use Tests\Unit\DataProviders\CommonTrades;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01DAY;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_02HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_04HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_05MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_15MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_30MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_45MIN;
+use const AlecRabbit\TWRBCore\Constants\T_ASK;
+use const AlecRabbit\TWRBCore\Constants\T_BID;
 
 class DataOHLCVWithDataProviderTest extends TestCase
 {
@@ -15,7 +28,7 @@ class DataOHLCVWithDataProviderTest extends TestCase
     /** @var Rewindable */
     private static $data;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         $pair = 'btc_usd';
 

@@ -1,22 +1,30 @@
 <?php
-/**
- * Date: 31.10.18
- * Time: 16:33
- */
 
-namespace Unit;
+namespace AlecRabbit\Tests\TWRBCore;
 
-
-use AlecRabbit\DataOHLCV;
-use AlecRabbit\Structures\Trade;
+use AlecRabbit\TWRBCore\DataOHLCV;
+use AlecRabbit\TWRBCore\DataStruct\Trade;
 use PHPUnit\Framework\TestCase;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01DAY;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_01MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_02HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_03MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_04HOUR;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_05MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_15MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_30MIN;
+use const AlecRabbit\TWRBCore\Constants\RESOLUTION_45MIN;
+use const AlecRabbit\TWRBCore\Constants\T_ASK;
+use const AlecRabbit\TWRBCore\Constants\T_BID;
 
 class DataOHLCVSimpleTest extends TestCase
 {
     /** @var DataOHLCV */
     protected $ohlcv;
 
-    public function setUp()
+    public function setUp(): void
     {
         $pair = 'btc_usd';
         $this->ohlcv = new DataOHLCV($pair, 500);
@@ -184,6 +192,4 @@ class DataOHLCVSimpleTest extends TestCase
             [[1512518400], RESOLUTION_01DAY],
         ];
     }
-
-
 }

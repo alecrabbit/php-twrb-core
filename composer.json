@@ -27,7 +27,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "AlecRabbit\\Tests\\TWRBCore\\": "tests"
+      "AlecRabbit\\Tests\\TWRBCore\\": "tests",
+      "AlecRabbit\\Tests\\Aux\\": "tests\\Aux"
     },
     "files": [
       "src/TWRBCore/Constants.php"

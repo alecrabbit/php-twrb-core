@@ -1,15 +1,12 @@
 <?php
-/**
- * Date: 31.10.18
- * Time: 16:33
- */
 
-namespace Unit;
+namespace AlecRabbit\Tests\TWRBCore;
 
-
-use AlecRabbit\DataOHLCV;
-use AlecRabbit\Structures\Trade;
+use AlecRabbit\TWRBCore\DataOHLCV;
+use AlecRabbit\TWRBCore\DataStruct\Trade;
 use PHPUnit\Framework\TestCase;
+use const AlecRabbit\TWRBCore\Constants\T_ASK;
+use const AlecRabbit\TWRBCore\Constants\T_BID;
 
 class DataOHLCVSimpleUnsortedTest extends TestCase
 {
@@ -76,5 +73,4 @@ class DataOHLCVSimpleUnsortedTest extends TestCase
             $timestamp += 6400;
         }
     }
-
 }

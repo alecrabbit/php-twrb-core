@@ -25,15 +25,18 @@ $messagesObserver = new DefaultObserver(
         if (null !== $decoded) {
             $tradeTime = (int)($decoded->T / 1000);
             $milliseconds = sprintf('%+d', $decoded->E - $decoded->T);
+            $microtime = microtime(true) * 1000;
             $str = sprintf(
-                '%s.%03d %s %s %s %s %+.1fms %+.1fms',
+                '%s.%03d %s %s %s %s %s %s %+.1fms %+.1fms',
                 date('H:i:s', $tradeTime),
                 $decoded->T - $tradeTime * 1000,
                 $decoded->t ?? $decoded->a,
                 $decoded->p,
                 $decoded->q,
                 $decoded->m ? 'S' : 'B',
-                microtime(true) * 1000 - $decoded->T,
+                $microtime,
+                $decoded->T,
+                $microtime - $decoded->T,
                 $milliseconds
             );
             $start = hrtime(true);
