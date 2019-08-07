@@ -11,8 +11,6 @@ define(__NAMESPACE__ . '\HIGH', 'high');
 define(__NAMESPACE__ . '\OPEN', 'open');
 define(__NAMESPACE__ . '\TIMESTAMP', 'timestamp');
 
-//define(__NAMESPACE__ . '\DEFAULT_NAME', 'default');
-
 define(__NAMESPACE__ . '\STR_VP', 'vp_');
 define(__NAMESPACE__ . '\STR_P_SUM', 'p_sum_');
 define(__NAMESPACE__ . '\STR_VWAP', 'vwap_');
