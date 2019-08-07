@@ -21,8 +21,7 @@ class EventsCounterTest extends TestCase
     /** @test */
     public function creationEventCounter(): void
     {
-        $eventsCounter = new EventsCounter();
-        $eventsCounter->setName('new');
+        $eventsCounter = new EventsCounter('new');
         $this->assertEquals('new', $eventsCounter->getName());
         $this->assertEquals([], $eventsCounter->getRawEventsData());
         $eventsCounter->addEvent();

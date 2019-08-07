@@ -2,8 +2,8 @@
 
 namespace AlecRabbit\TWRBCore\Counters;
 
-use function AlecRabbit\base_timestamp;
 use AlecRabbit\Traits\Nameable;
+use function AlecRabbit\base_timestamp;
 use const AlecRabbit\Traits\Constants\DEFAULT_NAME;
 use const AlecRabbit\TWRBCore\Constants\PERIODS;
 
@@ -28,13 +28,14 @@ class TimedCounter
 
     /**
      * BasicCounter constructor.
+     * @param string|null $name
      * @param array|null $periods
      */
-    public function __construct(?array $periods = null)
+    public function __construct(?string $name = null, ?array $periods = null)
     {
-        $this->setName(DEFAULT_NAME);
-        $this->lastTimestamp = 0;
+        $this->setName($name ?? DEFAULT_NAME);
         $this->periods = $periods ?? PERIODS;
+        $this->lastTimestamp = 0;
     }
 
     /**

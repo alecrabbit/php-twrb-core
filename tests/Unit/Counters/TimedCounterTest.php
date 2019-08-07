@@ -184,7 +184,7 @@ class TimedCounterTest extends TestCase
     public function fill(): void
     {
         $this->counter = new TimedCounter(
-            [ // Period => GroupBy
+            null, [ // Period => GroupBy
                 P_01MIN => P_01MIN,
                 P_03MIN => P_03MIN,
                 P_05MIN => P_05MIN,
@@ -262,7 +262,7 @@ class TimedCounterTest extends TestCase
      */
     public function fillOnePeriod($periods, $expectedRaw, $expected): void
     {
-        $this->counter = new TimedCounter($periods);
+        $this->counter = new TimedCounter(null, $periods);
 
         $this->counter->enableRelativeMode();
         foreach (static::$dataGenerator as $timestamp) {
@@ -453,7 +453,7 @@ class TimedCounterTest extends TestCase
 
     protected function setUp():void
     {
-        $this->counter = new TimedCounter();
+        $this->counter = new TimedCounter(null);
     }
 
     protected function tearDown(): void
