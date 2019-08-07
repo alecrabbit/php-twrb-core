@@ -9,7 +9,7 @@ require_once __DIR__ . '/../examples/__include/bootstrap.php';
 require_once __DIR__ . '/../examples/__include/DefaultObserver.php';
 
 
-$symbol = 'LTCBTC';
+$symbol = 'BTCUSDt';
 $ohlcv = new DataOHLCV($symbol);
 
 $url =
